@@ -1,0 +1,76 @@
+{
+  "name": "shout",
+  "description": "Web IRC client",
+  "version": "0.50.0",
+  "author": {
+    "name": "Mattias Erming"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "shout": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erming/shout.git"
+  },
+  "scripts": {
+    "start": "node index",
+    "test": "NODE_ENV=test mocha test/**/*.js"
+  },
+  "keywords": [
+    "browser",
+    "web",
+    "chat",
+    "client",
+    "irc",
+    "server"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "cheerio": "^0.17.0",
+    "commander": "^2.3.0",
+    "event-stream": "^3.1.7",
+    "express": "^4.9.5",
+    "lodash": "~2.4.1",
+    "mkdirp": "^0.5.0",
+    "moment": "~2.7.0",
+    "read": "^1.0.5",
+    "request": "^2.51.0",
+    "slate-irc": "~0.7.3",
+    "socket.io": "~1.0.6"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "handlebars": "^2.0.0",
+    "mocha": "~2.0.1"
+  },
+  "gitHead": "e1c8f5a174298f30eb9c1a9ab7cbc6d5e95b13a1",
+  "bugs": {
+    "url": "https://github.com/erming/shout/issues"
+  },
+  "homepage": "https://github.com/erming/shout",
+  "_id": "shout@0.50.0",
+  "_shasum": "2ddf06ebf2b9e7cd9f1f9cedeca19efc888b2d13",
+  "_from": "shout@",
+  "_npmVersion": "2.1.18",
+  "_nodeVersion": "0.10.25",
+  "_npmUser": {
+    "name": "erming",
+    "email": "mattias@mattiaserming.com"
+  },
+  "maintainers": [
+    {
+      "name": "erming",
+      "email": "mattias@mattiaserming.com"
+    }
+  ],
+  "dist": {
+    "shasum": "2ddf06ebf2b9e7cd9f1f9cedeca19efc888b2d13",
+    "tarball": "http://registry.npmjs.org/shout/-/shout-0.50.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/shout/-/shout-0.50.0.tgz"
+}
