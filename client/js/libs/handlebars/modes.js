@@ -1,7 +1,7 @@
 Handlebars.registerHelper(
 	"modes", function(mode) {
 		var modes = {
-			"~": "owner",
+			"*": "owner",
 			"&": "admin",
 			"@": "op",
 			"%": "half-op",

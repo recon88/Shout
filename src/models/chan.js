@@ -28,7 +28,7 @@ Chan.prototype.sortUsers = function() {
 		function(u) { return u.name.toLowerCase(); }
 	);
 	var modes = [
-		"~",
+		"*",
 		"&",
 		"@",
 		"%",
