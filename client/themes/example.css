@@ -1,6 +1,83 @@
-/**
- * This is just an empty theme.
- */
+#server {
+visibility: hidden;
+}
 
-body {
+#servername {
+visibility: hidden;
+}
+
+#password {
+visibility: hidden;
+}
+
+#tls {
+visibility: hidden;
+}
+
+#nick {
+visibility: hidden;
+}
+
+#username {
+visibility: hidden;
+}
+
+#realname {
+visibility: hidden;
+}
+
+#channels {
+visibility: hidden;
+}
+
+#prefheader {
+visibility: hidden;
+}
+
+#connectbut {
+margin-top: -225px;
+}
+
+#settingsbut {
+visibility: hidden;
+}
+
+#chat .chat {
+background-color: rgb(247, 247, 247);
+}
+
+#chat .names {
+background-color: rgb(247, 247, 247);
+}
+
+#chat .count {
+background-color: #EFEEEE;
+}
+
+#chat .header {
+background-color: rgb(247, 247, 247);
+}
+
+#chat .self .text {
+color: #000;
+}
+
+#chat .msg .type {
+color: #000;
+}
+
+#chat .time {
+color: #000;
+}
+
+#chat a {
+color: #428bca;
+}
+
+#chat.no-colors .from {
+border-right: 1.5px solid #DAD9D9;
+}
+
+#chat .from {
+border-right: 1.5px solid #DAD9D9;
 }

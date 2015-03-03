@@ -10,6 +10,7 @@ var Network = require("./models/network");
 var slate = require("slate-irc");
 var tls = require("tls");
 var Helper = require("./helper");
+var dns = require("dns");
 
 module.exports = Client;
 
@@ -154,8 +155,25 @@ Client.prototype.connect = function(args) {
 	var nick = args.nick || "shout-user";
 	var username = args.username || nick.replace(/[^a-zA-Z0-9]/g, '');
 	var realname = args.realname || "Shout User";
+	var identpassword = args.identpassword || "";
 
 	var irc = slate(stream);
+
+	//Changes: Use WebIRC to forward the user IP.
+	if (config.webirc == true) {
+		var connections = client.sockets.in(client.id).connected;
+		for (a in connections) {
+			var ip = connections[a].request.connection.remoteAddress;
+			if (ip) {
+			dns.reverse(ip, function(err, clienthost) {
+				if(err || !clienthost.length) return;
+				irc.write("WEBIRC " + config.webirc + " " + username + " " + clienthost[0] + " " + ip);
+			})
+			break;
+			}
+		}
+	}
+
 	identd.hook(stream, username);
 
 	if (args.password) {
@@ -174,7 +192,7 @@ Client.prototype.connect = function(args) {
 		password: args.password,
 		username: username,
 		realname: realname,
-		commands: args.commands
+		commands: args.commands,
 	});
 
 	network.irc = irc;
@@ -209,6 +227,11 @@ Client.prototype.connect = function(args) {
 		setTimeout(function() {
 			irc.write("PING " + network.host);
 		}, delay);
+
+		//Changes: Identify with NickServ if password is given.
+		if (identpassword) {
+			irc.send("NickServ", "IDENTIFY " + identpassword);
+		}
 	});
 
 	irc.once("pong", function() {
