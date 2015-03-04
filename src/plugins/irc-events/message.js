@@ -53,8 +53,8 @@ module.exports = function(irc, network) {
 		var name = data.from;
 		var msg = new Msg({
 			type: type || Msg.Type.MESSAGE,
-			mode: chan.getMode(name),
-			from: action ? '' : name,
+			mode: action ? '' : chan.getMode(name),
+			from: action ? ' ' : name,
 			text: action ? name + ' ' + text : text,
 			self: self
 		});

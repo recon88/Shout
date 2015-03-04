@@ -528,7 +528,7 @@ $(function() {
 		var names = $(this).closest(".users").find(".names");
 		names.find("button").each(function() {
 			var btn = $(this);
-			var name = btn.text().toLowerCase().replace(/[+%@~]/, "");
+			var name = btn.text().toLowerCase().replace(/[+%@*]/, "");
 			if (name.indexOf(value) === 0) {
 				btn.show();
 			} else {

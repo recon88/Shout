@@ -25,8 +25,9 @@ module.exports = function(network, chan, cmd, args) {
 		
 		var msg = new Msg({
 			type: Msg.Type.ACTION,
-			from: irc.me,
-			text: text
+			mode: chan.getMode(irc.me),
+			from: ' ',
+			text: irc.me + ' ' + text
 		});
 		chan.messages.push(msg);
 		client.emit("msg", {
