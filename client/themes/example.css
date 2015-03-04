@@ -43,7 +43,12 @@ visibility: hidden;
 }
 
 #chat .chat {
-background-color: rgb(247, 247, 247);
+font-size: 14px;
+}
+
+#chat {
+font-family: sans-serif;
+font-size: 14px;
 }
 
 #chat .names {
@@ -56,6 +61,10 @@ background-color: #EFEEEE;
 
 #chat .header {
 background-color: rgb(247, 247, 247);
+}
+
+#windows .header .title {
+font: 16px Lato;
 }
 
 #chat .self .text {
@@ -80,4 +89,9 @@ border-right: 1.5px solid #DAD9D9;
 
 #chat .from {
 border-right: 1.5px solid #DAD9D9;
+}
+
+#input {
+font-family: sans-serif;
+font-size: 14px;
 }
