@@ -43,6 +43,7 @@ visibility: hidden;
 }
 
 #chat .chat {
+background-color: rgb(247, 247, 247);
 font-size: 14px;
 }
 
