@@ -15,7 +15,7 @@ module.exports = function(irc, network) {
 		}
 		var topic = data.topic;
 		var msg = new Msg({
-			type: Msg.Type.TOPIC,
+			type: "",
 			mode: chan.getMode(from),
 			from: from,
 			text: topic,
