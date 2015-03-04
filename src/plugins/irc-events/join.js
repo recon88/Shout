@@ -30,9 +30,10 @@ module.exports = function(irc, network) {
 			self = true;
 		}
 		var msg = new Msg({
-			from: data.nick,
-			type: Msg.Type.JOIN,
-			self: self
+			from: chan.name,
+			type: "",
+			self: self,
+			text: data.nick + " has joined the channel."
 		});
 		chan.messages.push(msg);
 		client.emit("msg", {

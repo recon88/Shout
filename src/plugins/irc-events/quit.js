@@ -16,9 +16,10 @@ module.exports = function(irc, network) {
 				users: chan.users
 			});
 			var msg = new Msg({
-				type: Msg.Type.QUIT,
+				type: "",
 				mode: chan.getMode(from),
-				from: from
+				from: chan.name,
+				text: data.nick + " has left the channel."
 			});
 			chan.messages.push(msg);
 			client.emit("msg", {

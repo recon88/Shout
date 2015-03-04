@@ -35,9 +35,9 @@ module.exports = function(irc, network) {
 				users: chan.users
 			});
 			var msg = new Msg({
-				type: Msg.Type.NICK,
-				from: data.nick,
-				text: nick,
+				type: "",
+				from: chan.name,
+				text: data.nick + " is now known as " + nick,
 				self: self
 			});
 			chan.messages.push(msg);
