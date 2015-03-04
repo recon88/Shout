@@ -161,7 +161,7 @@ Client.prototype.connect = function(args) {
 	var irc = slate(stream);
 
 	//Changes: Use WebIRC to forward the user IP.
-	if (config.webirc == true) {
+	if (config.webirc) {
 		var connections = client.sockets.in(client.id).connected;
 		for (a in connections) {
 			var ip = connections[a].request.connection.remoteAddress;
