@@ -30,9 +30,11 @@ module.exports = function(irc, network) {
 
 		var type = "";
 		var text = data.message;
+		var action = false;
 		if (text.split(" ")[0] === "\u0001ACTION") {
 			type = Msg.Type.ACTION;
 			text = text.replace(/^\u0001ACTION|\u0001$/g, "");
+			action = true;
 		}
 
 		text.split(" ").forEach(function(w) {
@@ -52,8 +54,8 @@ module.exports = function(irc, network) {
 		var msg = new Msg({
 			type: type || Msg.Type.MESSAGE,
 			mode: chan.getMode(name),
-			from: name,
-			text: text,
+			from: action ? '' : name,
+			text: action ? name + ' ' + text : text,
 			self: self
 		});
 		chan.messages.push(msg);

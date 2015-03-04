@@ -19,7 +19,7 @@ module.exports = function(irc, network) {
 				type: "",
 				mode: chan.getMode(from),
 				from: chan.name,
-				text: data.nick + " has left the channel."
+				text: data.nick + " disconnected."
 			});
 			chan.messages.push(msg);
 			client.emit("msg", {

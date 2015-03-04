@@ -72,6 +72,10 @@ font: 16px Lato;
 color: #000;
 }
 
+#chat .action, #chat .chan .action .user {
+    color: #5664c8 !important;
+}
+
 #chat .msg .type {
 color: #000;
 }

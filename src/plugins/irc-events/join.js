@@ -33,7 +33,7 @@ module.exports = function(irc, network) {
 			from: chan.name,
 			type: "",
 			self: self,
-			text: data.nick + " has joined the channel."
+			text: data.nick + " joined the channel."
 		});
 		chan.messages.push(msg);
 		client.emit("msg", {
