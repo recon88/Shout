@@ -21,7 +21,7 @@
 	</div>
 	<div class="chat">
 		<div class="messages">
-			{{"msg"}}
+			{{msg}}
 		</div>
 	</div>
 	<aside class="sidebar">
