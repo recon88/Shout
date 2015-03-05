@@ -328,7 +328,7 @@ $(function() {
 	var settings = $("#settings");
 	var options = $.extend({
 		badge: false,
-		colors: false,
+		colors: true,
 		join: true,
 		links: true,
 		mode: true,
