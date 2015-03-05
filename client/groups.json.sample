@@ -1,0 +1,12 @@
+{
+  groups: {
+    wrenchman: '#c98f1a',
+    emissary: '#458b00',
+    riot: '#ae250f'
+  },
+  nicks: {
+    AmShaegar: 'wrenchman',
+    Humpelstilzche: 'emissary',
+    RiotKengen: 'riot'
+  }
+}
