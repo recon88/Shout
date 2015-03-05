@@ -2,7 +2,8 @@
   "colors": {
     "wrenchman": "#c98f1a",
     "emissary": "#458b00",
-    "riot": "#ae250f"
+    "riot": "#ae250f",
+    "channel": "#ae250f"
   },
   "groups": {
     "AmShaegar": "wrenchman",
