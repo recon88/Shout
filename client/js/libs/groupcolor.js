@@ -1,3 +1,9 @@
-function groupcolor(nick) {
-  return $('#nick_colors').data('nickColors')[nick] || 'black';
+var groups_cache = null;
+jQuery.getJSON('groups.json').done(function(data) {
+  groups_cache = data;
+});
+
+function groupcolor(nick) { 
+  var group = groups_cache.groups[nick];
+  return groups_cache.colors[group] || 'black';
 }
