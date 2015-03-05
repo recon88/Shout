@@ -1,4 +1,4 @@
-{{#each messages}}
+{{#each messages}}
 <div class="msg {{type}} {{#if self}}self{{/if}}">
 	<span class="time">
 		{{tz time}}
