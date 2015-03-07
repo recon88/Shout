@@ -23,7 +23,7 @@ module.exports = function(irc, network) {
 				users: chan.users
 			});
 			var msg = new Msg({
-				type: Msg.Type.PART,
+				type: "",
 				mode: chan.getMode(from),
 				from: from,
 				text: data.nick + " left the channel."
