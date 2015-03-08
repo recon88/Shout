@@ -166,11 +166,17 @@ Client.prototype.connect = function(args) {
 		for (a in connections) {
 			var ip = connections[a].request.connection.remoteAddress;
 			if (ip) {
-			dns.reverse(ip, function(err, clienthost) {
-				if(err || !clienthost.length) return;
-				irc.write("WEBIRC " + config.webirc + " " + username + " " + clienthost[0] + " " + ip);
-			})
-			break;
+				dns.reverse(ip, function(err, clienthost) {
+					var hostname;
+					if(err || !clienthost.length) {
+						hostname = ip;
+					} else {
+						hostname = clienthost[0];
+					}
+					console.log(hostname);
+					irc.write("WEBIRC " + config.webirc + " " + username + " " + hostname + " " + ip);
+				});
+				break;
 			}
 		}
 	}
