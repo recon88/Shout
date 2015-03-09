@@ -91,6 +91,7 @@ function init(socket, client, token) {
 		socket.emit("auth");
 		socket.on("auth", auth);
 	} else {
+		client.setSocket(socket);
 		socket.on(
 			"input",
 			function(data) {

@@ -162,23 +162,16 @@ Client.prototype.connect = function(args) {
 
 	//Changes: Use WebIRC to forward the user IP.
 	if (config.webirc) {
-		var connections = client.sockets.in(client.id).connected;
-		for (a in connections) {
-			var ip = connections[a].request.connection.remoteAddress;
-			if (ip) {
-				dns.reverse(ip, function(err, clienthost) {
-					var hostname;
-					if(err || !clienthost.length) {
-						hostname = ip;
-					} else {
-						hostname = clienthost[0];
-					}
-					console.log(hostname);
-					irc.write("WEBIRC " + config.webirc + " " + username + " " + hostname + " " + ip);
-				});
-				break;
+		var ip = this.socket.handshake.headers['x-forwarded-for'] || this.socket.handshake.address.address;
+		dns.reverse(ip, function(err, clienthost) {
+			var hostname;
+			if(err || !clienthost.length) {
+				hostname = ip;
+			} else {
+				hostname = clienthost[0];
 			}
-		}
+			irc.write("WEBIRC " + config.webirc + " " + username + " " + hostname + " " + ip);
+		});
 	}
 
 	identd.hook(stream, username);
@@ -406,4 +399,8 @@ Client.prototype.save = function(force) {
 			}
 		);
 	});
+};
+
+Client.prototype.setSocket = function(socket) {
+	this.socket = socket;
 };
