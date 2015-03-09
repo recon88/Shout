@@ -10,7 +10,6 @@ var Network = require("./models/network");
 var slate = require("slate-irc");
 var tls = require("tls");
 var Helper = require("./helper");
-var dns = require("dns");
 
 module.exports = Client;
 
@@ -162,16 +161,7 @@ Client.prototype.connect = function(args) {
 
 	//Changes: Use WebIRC to forward the user IP.
 	if (config.webirc) {
-		var ip = this.socket.handshake.headers['x-forwarded-for'] || this.socket.handshake.address.address;
-		dns.reverse(ip, function(err, clienthost) {
-			var hostname;
-			if(err || !clienthost.length) {
-				hostname = ip;
-			} else {
-				hostname = clienthost[0];
-			}
-			irc.write("WEBIRC " + config.webirc + " " + username + " " + hostname + " " + ip);
-		});
+		irc.write("WEBIRC " + config.webirc + " " + username + " " + this.meta.hostname + " " + this.meta.ip);
 	}
 
 	identd.hook(stream, username);
@@ -401,6 +391,6 @@ Client.prototype.save = function(force) {
 	});
 };
 
-Client.prototype.setSocket = function(socket) {
-	this.socket = socket;
+Client.prototype.setMeta = function(meta) {
+	this.meta = meta;
 };
