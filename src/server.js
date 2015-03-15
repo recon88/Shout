@@ -83,6 +83,7 @@ function index(req, res, next) {
 		if(req.cookies.nick) {
 			data.defaults.nick = req.cookies.nick;
 		}
+		data.promptPassword = false;
 		if(req.query.host) {
 			var matches = req.query.host.match(/([^:]+)(?::(\s)?(\d+))?/);
 			if(matches) {
@@ -91,6 +92,7 @@ function index(req, res, next) {
 				if(matches[3]) {
 					data.defaults.port = matches[3];
 				}
+				data.promptPassword = true;
 			}
 		}
 		res.setHeader("Content-Type", "text/html");
