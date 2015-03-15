@@ -3,6 +3,7 @@ var bcrypt = require("bcrypt-nodejs");
 var Client = require("./client");
 var ClientManager = require("./clientManager");
 var express = require("express");
+var cookieParser = require('cookie-parser');
 var fs = require("fs");
 var io = require("socket.io");
 var Helper = require("./helper");
@@ -17,6 +18,7 @@ module.exports = function(options) {
 	config = _.extend(config, options);
 
 	var app = express()
+		.use(cookieParser())
 		.use(index)
 		.use(express.static("client"));
 
@@ -78,6 +80,9 @@ function index(req, res, next) {
 			require("../package.json"),
 			config
 		);
+		if(req.cookies.nick) {
+			data.defaults.nick = req.cookies.nick;
+		}
 		res.setHeader("Content-Type", "text/html");
 		res.writeHead(200);
 		res.end(_.template(

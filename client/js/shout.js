@@ -687,6 +687,14 @@ $(function() {
 				}
 			);
 		}
+		if (values.nick) {
+			$.cookie(
+				"nick",
+				$("<div>").text(values.nick).html(), {
+					expires: expire(30)
+				}
+			);
+		}
 		socket.emit(
 			event, values
 		);
