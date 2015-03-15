@@ -83,6 +83,16 @@ function index(req, res, next) {
 		if(req.cookies.nick) {
 			data.defaults.nick = req.cookies.nick;
 		}
+		if(req.query.host) {
+			var matches = req.query.host.match(/([^:]+)(?::(\s)?(\d+))?/);
+			if(matches) {
+				data.defaults.host = matches[1];
+				data.defaults.tls = matches[2] ? true : false;
+				if(matches[3]) {
+					data.defaults.port = matches[3];
+				}
+			}
+		}
 		res.setHeader("Content-Type", "text/html");
 		res.writeHead(200);
 		res.end(_.template(
