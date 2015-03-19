@@ -160,8 +160,8 @@ Client.prototype.connect = function(args) {
 	var irc = slate(stream);
 
 	//Changes: Use WebIRC to forward the user IP.
-	if (config.webirc) {
-		irc.write("WEBIRC " + config.webirc + " " + username + " " + this.meta.hostname + " " + this.meta.ip);
+	if (config.webirc[server.host]) {
+		irc.write("WEBIRC " + config.webirc[server.host] + " " + username + " " + this.meta.hostname + " " + this.meta.ip);
 	}
 
 	identd.hook(stream, username);

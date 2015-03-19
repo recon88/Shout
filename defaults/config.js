@@ -235,5 +235,15 @@ module.exports = {
 		// @default  113
 		//
 		port: 113
+	},
+	
+	//
+	// Send WEBIRC password along for defined host.
+	//
+	// @type	object
+	// @default	{}
+	//
+	webirc: {
+		"irc.example.org": "yourwebircpassword"
 	}
 };
