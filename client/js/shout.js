@@ -338,6 +338,7 @@ $(function() {
 		part: true,
 		thumbnails: true,
 		quit: true,
+		theme: "xample.css"
 	}, $.cookie("settings"));
 
 	for (var i in options) {
@@ -379,6 +380,19 @@ $(function() {
 				Notification.requestPermission();
 			}
 		}
+	});
+	
+	settings.on("change", "select", function() {
+		var self = $(this);
+		var name = self.attr("name");
+		options[name] = self.val();
+		$.cookie(
+			"settings",
+			options, {
+				expires: expire(365)
+			}
+		);
+		$("#theme").prop("href", "themes/"+self.val());
 	});
 
 	var viewport = $("#viewport");
