@@ -80,9 +80,11 @@ function index(req, res, next) {
 			require("../package.json"),
 			config
 		);
+
 		if(req.cookies.nick) {
 			data.defaults.nick = req.cookies.nick;
 		}
+		
 		data.promptPassword = false;
 		if(req.query.host) {
 			var matches = req.query.host.match(/([^:]+)(?::(\s)?(\d+))?/);
@@ -95,6 +97,12 @@ function index(req, res, next) {
 				data.promptPassword = true;
 			}
 		}
+
+		var settings = JSON.parse(req.cookies.settings);
+		if(settings.theme) {
+			data.theme = "themes/"+settings.theme;
+		}
+
 		res.setHeader("Content-Type", "text/html");
 		res.writeHead(200);
 		res.end(_.template(

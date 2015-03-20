@@ -338,7 +338,7 @@ $(function() {
 		part: true,
 		thumbnails: true,
 		quit: true,
-		theme: "xample.css"
+		theme: "example.css"
 	}, $.cookie("settings"));
 
 	for (var i in options) {
@@ -381,7 +381,7 @@ $(function() {
 			}
 		}
 	});
-	
+
 	settings.on("change", "select", function() {
 		var self = $(this);
 		var name = self.attr("name");
