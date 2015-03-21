@@ -37,7 +37,7 @@ $(function() {
 
 	try {
 		var pop = new Audio();
-		pop.src = "/audio/pop.ogg";
+		pop.src = "audio/pop.ogg";
 	} catch(e) {
 		var pop = {
 			play: $.noop
@@ -589,7 +589,7 @@ $(function() {
 				if (settings.badge && Notification.permission == "granted") {
 					var notify = new Notification(msg.from + " says:", {
 						body: msg.text.trim(),
-						icon: "/img/logo-64.png"
+						icon: "img/logo-64.png"
 					});
 					notify.onclick = function() {
 						window.focus();
