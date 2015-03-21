@@ -38,7 +38,10 @@ module.exports = function(irc, network) {
 		}
 
 		text.split(" ").forEach(function(w) {
-			if (w.replace(/^@/, "").toLowerCase().indexOf(irc.me.toLowerCase()) === 0) type += " highlight";
+			w = w.toLowerCase();
+			if (w.replace(/^@/, "").indexOf(irc.me.toLowerCase()) === 0) type += " highlight";
+			if (w.indexOf("@all") === 0) type += " highlight";
+			if (w.indexOf("@everyone") === 0) type += " highlight";
 		});
 
 		var self = false;
