@@ -632,7 +632,8 @@ button {
 	display: none;
 	color: #222;
 	font: 12px Lato;
-	max-width: 100%;
+	max-width: 30%;
+	max-height: 30%;
 	padding: 6px 8px;
 	margin-top: 2px;
 }

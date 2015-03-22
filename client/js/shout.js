@@ -338,7 +338,7 @@ $(function() {
 		part: true,
 		thumbnails: true,
 		quit: true,
-		theme: "example.css"
+		theme: "riot"
 	}, $.cookie("settings"));
 
 	for (var i in options) {
@@ -385,6 +385,10 @@ $(function() {
 	settings.on("change", "select", function() {
 		var self = $(this);
 		var name = self.attr("name");
+		if(self.val() === "-") {
+			return;
+		}
+		
 		options[name] = self.val();
 		$.cookie(
 			"settings",
@@ -392,7 +396,7 @@ $(function() {
 				expires: expire(365)
 			}
 		);
-		$("#theme").prop("href", "themes/"+self.val());
+		$("#theme").prop("href", "themes/"+self.val()+".css");
 	});
 
 	var viewport = $("#viewport");
