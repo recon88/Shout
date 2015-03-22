@@ -98,7 +98,7 @@ function index(req, res, next) {
 			}
 		}
 
-		var settings = JSON.parse(req.cookies.settings);
+		var settings = req.cookies.settings ? JSON.parse(req.cookies.settings) : {};
 		if(settings.theme) {
 			data.theme = "themes/"+settings.theme;
 		}
