@@ -1,0 +1,145 @@
+/*
+BACKGROUND #01161a
+INPUT BG #002830
+PRIMARY #b09c87
+SECONDARY #cab5a2
+LINK #94724d
+HOVER #cab5a2
+BORDERS #195657
+*/
+
+body {
+    background-color: #021b20;
+    color: #b09c87;
+}
+
+*::-moz-placeholder {
+    color: #cab5a2;
+    opacity: 0.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #94724d;
+}
+
+.btn {
+    border-color: #135866;
+    color: #135866;
+}
+
+.btn:hover {
+    background-color: #135866;
+    color: #94724d;
+}
+
+#viewport .lt, #viewport .rt {
+    color: #135866;
+}
+
+#windows .input {
+    background-color: #002830;
+    border-color: #195657;
+    color: #b09c87;
+}
+
+#windows .window::before, #windows .chan::before {
+    background: linear-gradient(#01161a, #002830) repeat scroll 0 0 #01161a;
+    border-bottom: 1px solid #195657;
+}
+
+#windows .header .button, #form #submit {
+    background: #002830;
+    border-color: #195657;
+    color: #135866;
+}
+
+#windows .window h2 {
+    border-bottom: 1px solid #195657;
+    color: #94724d;
+}
+
+#windows .chan, #windows .window {
+    background-color: #01161a;
+}
+
+#sidebar .chan:first-child {
+    color: #135866;
+}
+
+#sidebar .chan, #footer .icon {
+    color: #94724d;
+}
+
+#sidebar .chan:hover,
+#footer .icon:hover,
+#sidebar .active {
+    color: #cab5a2;
+}
+
+#settings .opt select {
+    background-color: #002830;
+    border-color: #195657;
+    color: #b09c87;
+}
+
+#chat .from,
+#windows .header,
+#chat .user-mode:before,
+#chat .sidebar {
+    border-color: #195657;
+}
+
+#chat .sidebar {
+    background: #01161a;
+}
+
+#chat .count::before {
+    color: #cab5a2;
+}
+
+#chat .count {
+    background: #01161a;
+}
+
+#chat .search {
+    color: #b09c87;
+}
+
+#chat .time {
+    color: #135866;
+}
+
+#chat .user {
+    color: #b09c87;
+}
+
+#chat .self .text {
+    color: #cab5a2;
+}
+
+#chat a {
+    color: #94724d;
+}
+
+#chat .toggle-content, #chat .toggle-button {
+    background-color: #002830;
+    color: #b09c87;
+}
+
+#chat .toggle-content .head {
+    color: #94724d;
+}
+
+#chat .toggle-content .body {
+    color: #b09c87;
+}
+
+#form {
+    background-color: #01161a;
+    border-color: #195657;
+}
+
+#form #input {
+    background-color: #002830;
+    border-color: #195657;
+}
