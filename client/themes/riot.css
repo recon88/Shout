@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #135866;
 }
 
-#chat .user {
+#chat .user, #chat .channel {
     color: #b09c87;
 }
 

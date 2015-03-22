@@ -733,6 +733,18 @@ button {
 #chat .user-mode.normal:before {
 	content: "Users";
 }
+#chat .user, #chat .channel {
+    color: #000000;
+}
+#chat .wrenchman {
+    color: #c98f1a;
+}
+#chat .emissary {
+    color: #458b00;
+}
+#chat .riot {
+    color: #ae250f;
+}
 #sign-in label {
 	display: block;
 	margin-top: 10px;

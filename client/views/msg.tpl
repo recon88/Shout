@@ -5,7 +5,7 @@
 	</span>
 	<span class="from">
 		{{#if from}}
-		<button class="user" style="color: {{groupcolor from}}">{{mode}}{{from}}</button>
+		<button class="{{group from}}">{{mode}}{{from}}</button>
 		{{/if}}
 	</span>
 	<span class="text">

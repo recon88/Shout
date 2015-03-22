@@ -32,6 +32,14 @@ color: #000;
     color: #5664c8 !important;
 }
 
+#chat .user {
+    color: #000000;
+}
+
+#chat .channel {
+    color: #4848b9;
+}
+
 #chat .msg .type {
 color: #000;
 }
