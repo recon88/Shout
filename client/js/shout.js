@@ -690,6 +690,7 @@ $(function() {
 			.end();
 		if (form.closest(".window").attr("id") == "connect") {
 			event = "conn";
+			$("#footer").find("button.connect").hide();
 		}
 		var values = {};
 		$.each(form.serializeArray(), function(i, obj) {
