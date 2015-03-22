@@ -62,8 +62,16 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #01161a;
 }
 
+#sidebar .empty {
+    color: #b09c87;
+}
+
 #sidebar .chan:first-child {
     color: #135866;
+}
+
+#sidebar .chan:first-child:hover {
+    color: #cab5a2;
 }
 
 #sidebar .chan, #footer .icon {

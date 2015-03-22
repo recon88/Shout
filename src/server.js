@@ -98,9 +98,13 @@ function index(req, res, next) {
 			}
 		}
 
-		var settings = req.cookies.settings ? JSON.parse(req.cookies.settings) : {};
-		if(settings.theme) {
-			data.theme = "themes/"+settings.theme;
+		try {
+			var settings = JSON.parse(req.cookies.settings);
+			if(settings.theme && settings.theme.match(/^[\w]+$/)) {
+				data.theme = "themes/"+settings.theme+".css";
+			}
+		} catch(e) {
+			// Do nothing if cookie connot be parsed.
 		}
 
 		res.setHeader("Content-Type", "text/html");
