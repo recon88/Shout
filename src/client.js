@@ -151,7 +151,8 @@ Client.prototype.connect = function(args) {
 		});
 	});
 
-	var nick = args.nick.replace(/\s+/g, '_') || "shout-user";
+	var nick = args.nick || "shout-user";
+	nick = nick.replace(/\s+/g, '_');
 	var username = args.username || nick.replace(/[^a-zA-Z0-9]/g, '');
 	//Use username@Shout as realname.
 	var realname = username + "@Shout";
