@@ -154,8 +154,24 @@ h1, h2, h3, h4, h5, h6 {
 #form #input {
     background-color: #002830;
     border-color: #195657;
+    font-family: sans-serif;
+    font-size: 14px;
 }
 
 #footer button.active {
     color: #cab5a2;
 }
+
+#footer .icon {
+    font: 24px FontAwesome;
+}
+
+#windows .header .title {
+    font: 16px Lato;
+}
+
+#chat {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
