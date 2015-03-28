@@ -573,6 +573,7 @@ button {
 }
 #chat .wrap,
 #chat .text a {
+	cursor: pointer;
 	font-style: normal;
 	word-break: break-all;
 	word-wrap: break-word;

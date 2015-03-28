@@ -197,6 +197,24 @@ $(function() {
 				data.msg
 			]);
 
+		chan.find(".messages .text:not(.processed)")
+			.each(function() {
+				var html = $(this).html();
+				console.log(html);
+				$(this)
+					.addClass("processed")
+					.html(html.replace(/(\W)(#[\w\d-.]{0,200})/ig,
+						'$1<a class="join" data-chan="$2">$2</a>'));
+				$(this)
+					.find("a.join")
+					.on("click", function() {
+						socket.emit("input", {
+							target: chat.data("id"),
+							text: "/join " + $(this).data("chan")
+						});
+					});
+			});
+
 		if (!chan.hasClass("channel")) {
 			return;
 		}
