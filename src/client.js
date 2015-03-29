@@ -152,7 +152,7 @@ Client.prototype.connect = function(args) {
 		});
 	});
 
-	var nick = args.nick || "shout-user";
+	var nick = args.nick || config.defaults.nick;
 	nick = nick.replace(/\s+/g, '_');
 	var username = args.username || nick.replace(/[^a-zA-Z0-9]/g, '');
 	//Use username@Shout as realname.
