@@ -200,7 +200,6 @@ $(function() {
 		chan.find(".messages .text:not(.processed)")
 			.each(function() {
 				var html = $(this).html();
-				console.log(html);
 				$(this)
 					.addClass("processed")
 					.html(html.replace(/(\W)(#[\w\d-.]{0,200})/ig,
