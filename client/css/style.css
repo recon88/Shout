@@ -735,17 +735,17 @@ button {
 #chat .user-mode.normal:before {
 	content: "Users";
 }
-#chat .user, #chat .channel {
+#chat .default, #chat .channel {
     color: #000000;
 }
 #chat .wrenchman {
-    color: #c98f1a;
+    color: #c98f1a !important;
 }
 #chat .emissary {
-    color: #458b00;
+    color: #458b00 !important;
 }
 #chat .riot {
-    color: #ae250f;
+    color: #ae250f !important;
 }
 #sign-in label {
 	display: block;

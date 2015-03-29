@@ -13,7 +13,7 @@
 			{{/unless}}
 			<div class="user-mode {{modes mode}}">
 			{{/diff}}
-			<button class="{{group name}}">{{mode}}{{name}}</button>
+			<button class="user {{group name}}">{{mode}}{{name}}</button>
 		{{/each}}
 		</div>
 	</div>

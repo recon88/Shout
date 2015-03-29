@@ -8,5 +8,5 @@ function group(nick) {
     return 'channel';
   }
 
-  return groups_cache[nick] || 'user';
+  return groups_cache[nick] || 'default';
 }
